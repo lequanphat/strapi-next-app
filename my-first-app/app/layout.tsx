@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header/>
         <div className="p-4 flex justify-center">
-        <div className="w-[60%]">
+        <div className="w-full md:w-[90%] lg:w-[80%] xl:w-[60%] 2xl:w-[55%]">
         <ReactQueryProvider>
           {children}
           </ReactQueryProvider>
