@@ -1,44 +1,26 @@
-'use client';
-import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
-interface Blog {
-  id:string;
-  attributes: {
-    title: string;
-    content:string;
-    createdat: string;
-  }
-}
+import DetailedBlogInfo from "./components";
 
-const fetchBlog = async (blog_id:string) => {
-  const response = fetch(`http://localhost:1338/api/blogs/${blog_id}`, {cache: "no-cache"})
-    .then((response) => response.json())
-    .catch((err) => console.error(err));
-    return response;
+// generate metadata function
+export const generateMetadata = ({
+    params,
+}: {
+    params: { blog_id: string };
+}) => {
+    return {
+        title: `Blog ${params.blog_id}`,
+    };
 };
 
-const DetailedBlog = ({ params } : {params : {blog_id: string}}) => {
-  const { data, isLoading } = useQuery({
-    queryFn: () => fetchBlog(params.blog_id),
-    queryKey: ["blog"], 
-  });
-  const blog: Blog = data?.data || {};
-  return (
-    <div className="py-16">
-      <div className="py-4">
-        <Link href="/blogs">Back to Blogs</Link>
-      </div>
-       <div className="p-8 border-[1px] border-solid border-[#ccc] rounded-md">
-        <h1 className="font-bold text-center">{blog?.attributes?.title}</h1>
-        <div className="py-3">
-          <p>{blog?.attributes?.content}</p>
+const DetailedBlog = ({ params }: { params: { blog_id: string } }) => {
+    return (
+        <div className="py-16">
+            <div className="py-4">
+                <Link href="/blogs">Back to Blogs</Link>
+            </div>
+            <DetailedBlogInfo blog_id={params.blog_id} />
         </div>
-        <div>
-          <p>{blog?.attributes?.createdat}</p>
-        </div>
-       </div>
-    </div>
-  )
-}
+    );
+};
 
-export default DetailedBlog
+export default DetailedBlog;

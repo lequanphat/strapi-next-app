@@ -1,4 +1,8 @@
 
+export const metadata = { 
+  title: "Aubout Page"
+}
+
 const Profile = () => {
   return (
     <div>
