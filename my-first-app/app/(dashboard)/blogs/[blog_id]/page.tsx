@@ -16,13 +16,13 @@ const fetchBlog = async (blog_id:string) => {
     .catch((err) => console.error(err));
     return response;
 };
+
 const DetailedBlog = ({ params } : {params : {blog_id: string}}) => {
   const { data, isLoading } = useQuery({
     queryFn: () => fetchBlog(params.blog_id),
     queryKey: ["blog"], 
   });
   const blog: Blog = data?.data || {};
-  console.log(blog);
   return (
     <div className="py-16">
       <div className="py-4">

@@ -1,7 +1,7 @@
 module.exports = {
   routes: [
     {
-      method: "GET",
+      method: "POST",
       path: "/import-blogs-file",
       handler: "import-blogs-file.postsReport",
       config: {

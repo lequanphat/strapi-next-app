@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "blog"
+    "displayName": "blog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,9 +17,6 @@
     },
     "content": {
       "type": "text"
-    },
-    "createdat": {
-      "type": "datetime"
     }
   }
 }
