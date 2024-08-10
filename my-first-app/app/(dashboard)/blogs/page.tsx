@@ -5,9 +5,6 @@ export const metadata: Metadata = {
     title: "Blog Page",
 };
 const Blog = () => {
-    if(Math.random() > 0.5) {
-        throw new Error("Random error");
-    }
     return (
         <div>
             <div className="flex items-center justify-between p-4">

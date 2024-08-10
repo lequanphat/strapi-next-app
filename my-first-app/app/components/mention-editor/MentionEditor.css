@@ -1,0 +1,23 @@
+.tribute-container {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 5px;
+}
+
+.tribute-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tribute-container li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.tribute-container li.highlight {
+  background-color: #e0e0e0;
+}
